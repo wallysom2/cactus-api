@@ -1,10 +1,12 @@
 const { Router } = require("express");
 
-const findByIdClientesController = require("./controllers/client/findManyClientes");
+const findManyClientesController = require("./controllers/client/findManyClientes");
+const findClienteByIdController = require("./controllers/client/findClienteByIdController");
 
 const routes = Router();
 
-//rota para buscar todos os clientes
-routes.get("/findManyCliente", findByIdClientesController.handle);
+routes.get("/findManyCliente", findManyClientesController.handle);
+routes.get("/cliente/:id", findClienteByIdController.handle);
 
 module.exports = routes;
+
